@@ -38,4 +38,6 @@ jobs:
           push: true
           platforms: ${{ env._PLATFORMS }}
           tags: dph5199278/centos:7
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
  

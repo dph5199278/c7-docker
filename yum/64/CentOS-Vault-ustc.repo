@@ -1,30 +1,30 @@
 #---- Packages previously released as 7.9.2009, and its updates
-[C7.9.2009-base]
+[C7.9.2009-base-ustc]
 name=CentOS-7.9.2009 - Base
-baseurl=http://mirror.nsc.liu.se/centos-store/altarch/7.9.2009/os/$basearch/
+baseurl=http://mirrors.ustc.edu.cn/centos-vault/7.9.2009/os/$basearch/
 gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
 
-[C7.9.2009-updates]
+[C7.9.2009-updates-ustc]
 name=CentOS-7.9.2009 - Updates
-baseurl=http://mirror.nsc.liu.se/centos-store/altarch/7.9.2009/updates/$basearch/
+baseurl=http://mirrors.ustc.edu.cn/centos-vault/7.9.2009/updates/$basearch/
 gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
 
-[C7.9.2009-extras]
+[C7.9.2009-extras-ustc]
 name=CentOS-7.9.2009 - Extras
-baseurl=http://mirror.nsc.liu.se/centos-store/altarch/7.9.2009/extras/$basearch/
+baseurl=http://mirrors.ustc.edu.cn/centos-vault/7.9.2009/extras/$basearch/
 gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
 
-[C7.9.2009-centosplus]
+[C7.9.2009-centosplus-ustc]
 name=CentOS-7.9.2009 - CentOSPlus
-baseurl=http://mirror.nsc.liu.se/centos-store/altarch/7.9.2009/centosplus/$basearch/
+baseurl=http://mirrors.ustc.edu.cn/centos-vault/7.9.2009/centosplus/$basearch/
 gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
 
-[C7.9.2009-fasttrack]
+[C7.9.2009-fasttrack-ustc]
 name=CentOS-7.9.2009 - Fasttrack
-baseurl=http://mirror.nsc.liu.se/centos-store/altarch/7.9.2009/fasttrack/$basearch/
+baseurl=http://mirrors.ustc.edu.cn/centos-vault/7.9.2009/fasttrack/$basearch/
 gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7

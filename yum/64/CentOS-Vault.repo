@@ -1,5 +1,4 @@
 #---- Packages previously released as 7.9.2009, and its updates
-# C7.9.2009
 [C7.9.2009-base]
 name=CentOS-7.9.2009 - Base
 baseurl=http://mirror.nsc.liu.se/centos-store/7.9.2009/os/$basearch/
