@@ -34,6 +34,20 @@ RUN rpm --import http://mirror.nsc.liu.se/centos-store/RPM-GPG-KEY-CentOS-7 && \
 RUN rm -f /etc/yum.repos.d/*
 COPY --from=yum /opt/CentOS-Vault.repo /etc/yum.repos.d/
 
+RUN if [ "$BUILD_ARCH" = "arm64" ]; then \
+    rpm --import http://mirror.nsc.liu.se/centos-store/altarch/7.8.2003/os/aarch64/RPM-GPG-KEY-CentOS-7-aarch64; \
+    NET_GPGKEY="file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7,file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7-aarch64"; \
+    elif [ "$BUILD_ARCH" = "arm" ]; then \
+    rpm --import http://mirror.nsc.liu.se/centos-store/altarch/7.8.2003/os/armhfp/RPM-GPG-KEY-CentOS-SIG-AltArch-Arm32; \
+    NET_GPGKEY="file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7,file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-SIG-AltArch-Arm32"; \
+    elif [ "$BUILD_ARCH" = "ppc64le" ]; then \
+    rpm --import http://mirror.nsc.liu.se/centos-store/altarch/7.8.2003/os/ppc64le/RPM-GPG-KEY-CentOS-SIG-AltArch-7-ppc64le; \
+    NET_GPGKEY="file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7,file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-SIG-AltArch-7-ppc64le"; \
+    else \
+    NET_GPGKEY="file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7"; \
+    fi && \
+    sed -i "s|^gpgkey=.*|gpgkey=${NET_GPGKEY}|" /etc/yum.repos.d/CentOS-*.repo
+
 FROM scratch
 LABEL maintainer="Dely <dph5199278@163.com>" \
     name="CentOS Base Image" \
